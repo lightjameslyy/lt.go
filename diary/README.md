@@ -60,12 +60,20 @@
 go build hello.go
 ./hello
 ```
-
 or 
-
 ```
 go run hello.go
 ```
 
 **实际上`go run`也是先编译后执行**
    
+<2018.08.23>
+## Golang执行流程
+
+两种方式：
+
+![go执行流程](images/2018-08-23-01.png)
+
+两种方式的区别：
+
+![go两种执行方式区别](images/2018-08-23-02.png)
