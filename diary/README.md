@@ -83,3 +83,54 @@ go build -o <bin_name> hello.go
 两种方式的区别：
 
 <img src="images/2018-08-23-02.png" width="60%"/>
+
+<2018.08.24>
+## Go程序开发注意事项
+
+- 文件扩展名：`.go`
+- 程序入口：`main()`函数
+- 大小写敏感
+- 每行一条语句，每个语句后**不需要分号**
+- <font color=red>定义变量或import包，但是unused，不能编译通过</font>
+
+## Golang转义字符
+
+1. `\t`: tab
+2. `\n`: newline
+3. `\\`: \
+4. `\"`: "
+5. `\r`: return
+
+## Comment in Golang
+
+### inline comment
+```go
+// inline comments
+```
+
+### block comment (multi-lines)
+```go
+/*
+    multi-line comments
+    second line
+*/
+```
+
+## Golang Code Style
+
+1. 尽量使用行注释
+2. `gofmt -w <go_file>`: 格式化代码
+3. 运算符两边加空格
+4. 函数的左花括号跟函数名在同一行：
+```go
+func main() {
+    ...
+}
+```
+思想：<font color=red>一个问题尽量只有一种解决方法</font> 
+
+5. 一行80个字符以内
+
+## Golang official website
+
+[Golang官网](https://golang.org/)
