@@ -8,7 +8,7 @@
 3. 先how后why，做了才会
 4. 琢磨别人怎么做
 
-![how to learn new technique](images/2018-08-22-01.png)
+<img src="images/2018-08-22-01.png" width="60%"/>
 
 ## 了解Golang
 
@@ -28,8 +28,8 @@
 
 ### Golang的特点
 
-![golang features](images/2018-08-22-02.png)
-![golang features](images/2018-08-22-03.png)
+<img src="images/2018-08-22-02.png" width="60%"/>
+<img src="images/2018-08-22-03.png" width="60%"/>
 
 ## 开发工具
 
@@ -46,7 +46,7 @@
 
 ### 程序目录结构
 
-![go project structure](images/2018-08-22-04.png)
+<img src="images/2018-08-22-04.png" width="60%"/>
 
 1. 文件后缀： `.go`
 2. `packange main`:
@@ -65,6 +65,12 @@ or
 go run hello.go
 ```
 
+编译和运行说明:
+- `go build`可以指定生成的可执行文件的名称：
+```shell
+go build -o <bin_name> hello.go
+```
+
 **实际上`go run`也是先编译后执行**
    
 <2018.08.23>
@@ -72,8 +78,8 @@ go run hello.go
 
 两种方式：
 
-![go执行流程](images/2018-08-23-01.png)
+<img src="images/2018-08-23-01.png" width="60%"/>
 
 两种方式的区别：
 
-![go两种执行方式区别](images/2018-08-23-02.png)
+<img src="images/2018-08-23-02.png" width="60%"/>
