@@ -54,6 +54,39 @@ func triangle() {
 	fmt.Println(c)
 }
 
+func consts() {
+	const (
+		filename = "abc.txt"
+		a, b     = 3, 4
+	)
+	var c int
+	c = int(math.Sqrt(a*a + b*b)) // 不指定类型，相当于宏替换，故不用考虑类型转换
+	fmt.Println(filename, c)
+}
+
+func enums() {
+	// iota: 从0开始自增
+	const (
+		cpp = iota
+		_   // 占一个元素
+		python
+		gloang
+		javascript
+	)
+	fmt.Println(cpp, javascript, python, gloang)
+
+	// b, kb, mb, gb, tb, pb
+	const (
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
+
 func main() {
 	fmt.Println("Hello world")
 	variableZeroValue()
@@ -64,4 +97,6 @@ func main() {
 
 	euler()
 	triangle()
+	consts()
+	enums()
 }

@@ -32,3 +32,34 @@
 - `var a, b int = 3, 4`
 - `var c int = math.Sqrt(a*a + b*b)`    **wrong**
 - `var c int = int(math.Sqrt(float64(a*a + b*b)))`  **right**
+
+### 变量定义要点
+
+- 变量类型写在变量名之后
+- 编译器可推测变量类型
+- 没有`char`，只有`rune`
+- 原生支持复数类型
+
+## 常量的定义
+
+- `const filename = "abc.txt"`
+- `const`数值可以作为各种类型使用
+- `const a, b = 3, 4`
+- `var c int = int(math.Sqrt(a*a + b*b))`，**a和b不用再进行强制类型转换为float**
+
+### 特殊的常量-枚举类型
+
+- 普通枚举类型
+- 自增值枚举类型（使用`iota`）
+
+## 条件语句
+
+### if
+
+- `if`的条件里不需要括号
+- `if`的条件里可以赋值，但是作用于在`if`语句内
+
+### switch
+
+- `switch`会自动`break`，除非使用**fallthrough**
+- `switch`后可以不跟表达式
