@@ -134,3 +134,62 @@ func main() {
 ## Golang official website
 
 [Golang官网](https://golang.org/)
+
+<2018.08.25>
+## 变量
+
+1. 三种声明方式(demo01)
+2. 一次声明多个变量(demo02)
+3. 全局变量(demo03)
+4. 变量使用注意事项(demo04)
+5. 默认值：int:0, string:"", float:0
+
+## 数据类型
+
+<img src="images/2018-08-25-01.png" width="60%"/>
+
+### 整数类型(demo06)
+
+1. `int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64`
+2. 查看数据类型，字节大小
+    - fmt.Printf("%T", n)
+    - unsafe.Sizeof()
+
+### 浮点类型(demo07)
+
+1. 默认是float64
+
+### 字符类型(demo08)
+
+1. Golang中没有专门的字符类型
+2. Golang中的字符串由字节组成，而不是由字符组成的
+3. fmt.Printf("%c", c)
+4. Golang use `utf-8`, 兼容ASCII
+
+<2018.08.26>
+### bool类型(demo09)
+
+1. 赋值的时候只能赋ture或false
+2. 占1个字节
+
+### string字符串类型(demo10)
+
+1. Golang的字符串由**单个字节**连接而成
+2. 使用utf-8编码
+3. Golang中的字符串一旦赋值就**不可变**了
+4. 双引号转义，**反引号**不转义
+5. 字符串拼接：`+`
+6. 多行拼接，`+`要放在行末
+
+### 基本数据类型的默认值(demo11)
+
+默认值是**零值**
+
+### 基本数据类型的转换(demo12)
+
+1. 必须**显式转换**，不能自动转换: T(v)
+2. **范围小->范围大**或**范围大->范围小**都可以，但是由大到小可能会导致**溢出**
+3. string与其他基本数据类型的转换
+    - fmt.Sprintf()
+    - strconv
+

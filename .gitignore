@@ -12,3 +12,7 @@
 *.out
 
 .DS_Store
+bin
+src/github.com
+src/golang.org
+src/u2pppw
