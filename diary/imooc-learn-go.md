@@ -5,7 +5,7 @@
 
 ### 使用var关键字
 
-- `var a, b, c bool`
+- `var a, b, c bool`
 - `var s1, s2 string = "hello", "world"`
 - 可放在函数内，或直接放在**包内**（看上去像全局变量，但不是全局变量）
 - 使用`var()`集中定义变量
@@ -35,16 +35,16 @@
 
 ### 变量定义要点
 
-- 变量类型写在变量名之后
+- 变量类型写在变量名之后
 - 编译器可推测变量类型
-- 没有`char`，只有`rune`
+- 没有`char`，只有`rune`
 - 原生支持复数类型
 
 ## 常量的定义
 
 - `const filename = "abc.txt"`
 - `const`数值可以作为各种类型使用
-- `const a, b = 3, 4`
+- `const a, b = 3, 4`
 - `var c int = int(math.Sqrt(a*a + b*b))`，**a和b不用再进行强制类型转换为float**
 
 ### 特殊的常量-枚举类型
@@ -61,7 +61,7 @@
 
 ### switch
 
-- `switch`会自动`break`，除非使用**fallthrough**
+- `switch`会自动`break`，除非使用**fallthrough**
 - `switch`后可以不跟表达式
 
 <2018.09.12>
@@ -73,7 +73,7 @@
 
 ### 基本语法要点回顾
 
-- `for`和`if`的条件没有括号
+- `for`和`if`的条件没有括号
 - `if`条件里也可以定义变量
 - 没有`while`
 - `switch`不需要`break`，也可以直接`switch`多个条件
@@ -83,7 +83,7 @@
 
 - `func eval(a, b int, op string) int`
 - 可以返回多个值，返回的多个值可以命名
-- 函数可以做参数
+- 函数可以做参数
 - 可变参数列表：`...`
 - 没有默认参数
 
@@ -142,3 +142,76 @@ s2 := s1[3:5]
 
 <img src="images/2018-09-13-04.png" width="60%"/>
 
+## Map
+
+### Map的操作
+
+<img src="images/2018-09-14-01.png" width="60%"/>
+
+### Map的遍历
+
+<img src="images/2018-09-14-02.png" width="60%"/>
+
+### Map的key
+
+<img src="images/2018-09-14-03.png" width="60%"/>
+
+### 练习
+
+leetcode: [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+
+## 字符和字符串
+
+- `rune`相当于go的`char`
+
+<img src="images/2018-09-14-04.png" width="60%"/>
+
+- 字符串的操作在`strings`包
+
+## 面向对象
+
+- go语言仅支持封装，不支持继承和多态
+- go语言没有`class`，只有`struct`
+- 不论是地址（指针）还是结构本身，一律使用`.`来访问成员
+
+### 结构体的创建
+
+- 使用自定义工厂函数
+- 可以返回局部变量的地址
+
+### 为结构体定义方法
+
+<img src="images/2018-09-14-05.png" width="60%"/>
+
+<img src="images/2018-09-14-06.png" width="60%"/>
+
+### 值接收者 vs 指针接收者
+
+- 要改变内容-->指针接收者
+- 结构过大-->指针接收者
+- 一致性：如有指针接收者，最好都是指针接收者
+- **值接收者**是go语言特有的
+- 值/指针接收者均可接受值/指针
+
+### 封装
+
+- 名字一般使用[CamelCase](https://en.wikipedia.org/wiki/Camel_case)
+- 首字母大写：`public` 
+- 首字母小写：`private` 
+
+### 包
+
+- 每个目录一个包
+- main包包含可执行入口
+- 为结构体定义的方法必须在同一个包内
+- 可以是不同的文件
+
+#### 如何扩充系统类型或别人的类型
+
+1. 定义别名
+2. 使用组合
+
+
+## **GOPATH**环境变量
+
+change my GOPATH from ~/github/lt-go to ~/go
