@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"imooclearngo/queue"
+
+	"lt.go/imooclearngo/queue"
 )
 
 func main() {
@@ -15,5 +16,8 @@ func main() {
 	fmt.Println(q.IsEmpty())
 	fmt.Println(q.Pop())
 	fmt.Println(q.IsEmpty())
+
+	q.Push("abc")
+	fmt.Println(q.Pop())
 
 }

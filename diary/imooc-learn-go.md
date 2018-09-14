@@ -196,8 +196,8 @@ leetcode: [3. Longest Substring Without Repeating Characters](https://leetcode.c
 ### 封装
 
 - 名字一般使用[CamelCase](https://en.wikipedia.org/wiki/Camel_case)
-- 首字母大写：`public` 
-- 首字母小写：`private` 
+- 首字母大写：`public` 
+- 首字母小写：`private` 
 
 ### 包
 
@@ -215,3 +215,24 @@ leetcode: [3. Longest Substring Without Repeating Characters](https://leetcode.c
 ## **GOPATH**环境变量
 
 change my GOPATH from ~/github/lt-go to ~/go
+
+<img src="images/2018-09-14-07.png" width="60%"/>
+
+<img src="images/2018-09-14-08.png" width="60%"/>
+
+## 接口
+
+- [duck typing](https://en.wikipedia.org/wiki/Duck_typing)
+
+### 接口的定义
+
+- 接口由**使用者**定义
+- 接口的实现是隐式的，只要实现接口的方法
+
+### 接口的值类型
+
+- 表示任何类型：`interface{}`
+- Type Assertion
+- Type Switch
+
+<img src="images/2018-09-14-09.png" width="60%"/>
