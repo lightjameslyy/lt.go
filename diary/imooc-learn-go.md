@@ -142,6 +142,7 @@ s2 := s1[3:5]
 
 <img src="images/2018-09-13-04.png" width="60%"/>
 
+<2018.09.14>
 ## Map
 
 ### Map的操作
@@ -236,3 +237,55 @@ change my GOPATH from ~/github/lt-go to ~/go
 - Type Switch
 
 <img src="images/2018-09-14-09.png" width="60%"/>
+
+<2018.09.15>
+### 接口的组合
+
+for example:
+```go
+type ReadWriter interface {
+    Reader
+    Writer
+}
+```
+
+### 常用系统接口
+
+- `Stringer`
+- `Reader/Writer`
+
+## 函数与闭包
+
+### 函数式编程 vs 函数指针
+
+- 函数是一等公民：参数、变量、返回值都可以是函数
+- 高阶函数
+- 函数-->闭包
+
+### “正统”函数式编程
+
+- 不可变性：不能有状态，只有常量和函数
+- 函数只能有一个参数
+- 本课程不作上述严格规定
+
+### go语言的闭包
+
+- 比较自然，不需要修饰如何访问自由变量
+- 没有Lambda表达式，但是有匿名函数
+
+## 资源管理与出错处理
+
+### defer调用
+
+- 确保调用在函数结束时发生
+- 参数在defer语句时计算
+- defer列表为**先进后出**
+- 使用场景：
+    - Open/Close
+    - Lock/Unlock
+    - PrintHeader/PrintFooter
+
+### 错误处理
+
+<img src="images/2018-09-15-01.png" width="60%"/>
+

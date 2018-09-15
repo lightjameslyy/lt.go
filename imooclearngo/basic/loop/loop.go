@@ -3,8 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"strconv"
+	"strings"
 )
 
 // 省略初始条件，相当于while
@@ -26,7 +28,11 @@ func printFile(filename string) {
 		panic(err)
 	}
 
-	scanner := bufio.NewScanner(file)
+	printFileContents(file)
+}
+
+func printFileContents(reader io.Reader) {
+	scanner := bufio.NewScanner(reader)
 
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
@@ -48,5 +54,12 @@ func main() {
 		convertToBin(4),
 	)
 	printFile("abc.txt")
-	forever()
+
+	s := `abc"d"
+	kkk
+	123
+	p`
+
+	printFileContents(strings.NewReader(s))
+	// forever()
 }
