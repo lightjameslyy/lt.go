@@ -289,3 +289,94 @@ type ReadWriter interface {
 
 <img src="images/2018-09-15-01.png" width="60%"/>
 
+<2018.09.17>
+- 统一的错误处理：see `filelistingserver`
+
+### `panic`
+
+- 停止当前函数执行
+- 一直向上返回，执行每一层的defer
+- 如果没有遇见`recover`，程序退出
+
+### `recover`
+
+- 仅在`defer`中使用
+- 获取`panic`的值
+- 如果无法处理，可重新`panic`
+
+### error vs panic
+
+- 意料之中的用`error`。如：文件打不开
+- 意料之外的用`panic`。如：数组越界
+
+## 测试
+
+### 传统测试 vs 表格驱动测试
+
+go语言使用后者。
+- 测试数据和测试逻辑分离
+- 明确的出错信息
+- 可以部分失败
+- go语言的语法更容易实现表格驱动测试
+
+
+see `triangle_test.go` and `nonrepeating_test.go`
+
+- `testing.T`的使用
+- 运行测试
+
+### 代码覆盖
+
+- 使用`go test -coverfile`获取代码覆盖报告
+- `go tool cover`查看代码覆盖报告
+
+### 性能测试
+
+- `testing.B`
+- 使用`pprof`优化性能
+
+### http测试
+
+1. using fake Request/Response (faster, fine-grained)
+2. set up a real server
+
+## 文档
+
+- 用注释写文档
+- 在测试中加入`Example***`
+- 使用`go doc`/`godoc`来查看/生成文档
+
+## `goroutine`
+
+### 协程 Coroutine
+
+- 轻量级“线程”
+- **非抢占式**多任务处理，由协程主动交出控制权
+- 编译器/解释器/虚拟机层面的多任务
+- 多个协程可能在一个或多个线程上运行
+
+子程序是协程的一个特例
+
+### define goroutine
+
+- 任何函数加上`go`就能送给调度器运行
+- 不需要在定义时区分是否是异步函数
+- 调度器在合适的点进行切换
+- 使用`-race`来检测数据访问的冲突
+
+### `goroutine`可能的切换点
+
+- I/O, select
+- channel
+- 等待锁
+- 函数调度（有时）
+- `runtime.Gosched()`
+- 以上只是参考，不能保证切换，不能保证在其他地方不切换
+
+## `channel`
+
+- channel
+- buffered channel
+- range (if channel closeed) 
+- 理论基础：Communication Sequential Process(CSP)
+- 不要通过共享内存来通信；通过通信来共享内存

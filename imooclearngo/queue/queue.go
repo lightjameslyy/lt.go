@@ -1,18 +1,23 @@
 package queue
 
-// 定义别名
+// An FIFO queue.
 type Queue []interface{}
 
+// Push an element into the queue.
+// e.g.:
+// 		q.push()
 func (q *Queue) Push(v interface{}) {
 	*q = append(*q, v)
 }
 
+// Pop a element from head.
 func (q *Queue) Pop() interface{} {
 	head := (*q)[0]
 	*q = (*q)[1:]
 	return head
 }
 
+// Returns if the queue is empty or not.
 func (q *Queue) IsEmpty() bool {
 	return len(*q) == 0
 }
