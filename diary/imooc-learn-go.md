@@ -380,3 +380,65 @@ see `triangle_test.go` and `nonrepeating_test.go`
 - range (if channel closeed) 
 - 理论基础：Communication Sequential Process(CSP)
 - 不要通过共享内存来通信；通过通信来共享内存
+
+<2018.09.18>
+### example1: 使用Channel等待goroutine结束
+
+- channel
+- waitgroup
+
+### example2: 使用Channel进行树的遍历
+
+- 返回`chan *Node`
+
+<2018.09.19>
+### example3: 使用Select进行调度
+
+- select的使用
+- 定时器的使用
+- 在select中使用nil channel（阻塞？）
+
+<2018.09.22>
+## 传统同步机制
+
+- WaitGroup
+- Mutex
+- Cond
+
+## http标准库
+
+- 使用http客户端发送请求
+- 使用http.Client控制请求头部等
+- 使用httputil简化工作
+
+### http服务器的性能分析
+
+- `import _ "net/http/pprof"`
+- 访问`/debug/pprof/`
+- 使用`go tool pprof`分析性能
+
+### 其他标准库
+
+- bufio
+- log
+- encoding/json
+- regexp
+- time
+- strings/math/rand
+
+看标准库的文档：
+- `godoc -http :8888`
+- 中文版文档
+
+## 迷宫
+
+### BFS
+
+- 为爬虫做准备
+- 应用广泛，综合性强
+- 面试常见
+
+<2018.09.24>
+
+- maze and steps
+<img src="images/2018-09-24-01.png" width="60%"/>
