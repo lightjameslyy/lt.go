@@ -515,3 +515,15 @@ see `triangle_test.go` and `nonrepeating_test.go`
 ### Scheduler 实现1
 
 <img src="images/2018-09-25-04.png" width="60%"/>
+
+<2018.09.26>
+
+上面的架构图可能出现**循环等待**
+
+### Scheduler 实现2: 并发分发Request
+
+<img src="images/2018-09-26-01.png" width="60%"/>
+
+### Scheduler 实现3: Request队列和Worker队列
+
+<img src="images/2018-09-26-02.png" width="60%"/>

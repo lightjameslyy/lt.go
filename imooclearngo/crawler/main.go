@@ -2,12 +2,21 @@ package main
 
 import (
 	"lt.go/imooclearngo/crawler/engine"
+	"lt.go/imooclearngo/crawler/scheduler"
 	"lt.go/imooclearngo/crawler/zhenai/parser"
 )
 
 func main() {
-	engine.Run(engine.Request{
-		Url:        "http://www.zhenai.com/zhenghun",
-		ParserFunc: parser.ParseCityList,
+	e := engine.ConcurrentEngine{
+		Scheduler:   &scheduler.QueuedScheduler{},
+		WorkerCount: 10,
+	}
+	// e.Run(engine.Request{
+	// 	Url:        "http://www.zhenai.com/zhenghun",
+	// 	ParserFunc: parser.ParseCityList,
+	// })
+	e.Run(engine.Request{
+		Url:        "http://www.zhenai.com/zhenghun/shanghai",
+		ParserFunc: parser.ParseCity,
 	})
 }
