@@ -9,6 +9,7 @@ var tests = []struct {
 }{
 	{5, 2},
 	{1, 0},
+	{4, 3},
 }
 
 func TestFindComplement(t *testing.T) {
