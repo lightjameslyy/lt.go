@@ -86,15 +86,19 @@ func ShortestSubarray2(A []int, K int) int {
 	return min_len
 }
 
+// put it another way(dp):
+// 	dp[0] = 0
+// 	dp[i] = sum of A[0] to A[i-1]	i >= 1
+// equivalent problem:
+// 	find min(j-i) in dp such that:
+// 		dp[j] - dp[i] >= K
 func ShortestSubarray(A []int, K int) int {
-	for _, val := range A {
+	dp := make([]int, len(A)+1)
+	for i, val := range A {
 		if val >= K {
 			return 1
 		}
-	}
-	dp := make([]int, len(A)+1)
-	for i := range A {
-		dp[i+1] = dp[i] + A[i]
+		dp[i+1] = dp[i] + val
 	}
 
 	res := len(dp)
@@ -103,8 +107,8 @@ func ShortestSubarray(A []int, K int) int {
 		for len(Q) > 0 && dp[i]-dp[Q[0]] >= K {
 			if i-Q[0] < res {
 				res = i - Q[0]
-				Q = Q[1:]
 			}
+			Q = Q[1:]
 		}
 		for len(Q) > 0 && dp[i] < dp[Q[len(Q)-1]] {
 			Q = Q[:len(Q)-1]
