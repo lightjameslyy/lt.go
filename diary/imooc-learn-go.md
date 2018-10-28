@@ -527,3 +527,29 @@ see `triangle_test.go` and `nonrepeating_test.go`
 ### Scheduler 实现3: Request队列和Worker队列
 
 <img src="images/2018-09-26-02.png" width="60%"/>
+
+<2018.10.03>
+
+## ItemSaver
+
+保存profile信息
+
+## ElasticSearch
+
+- 存储数据
+- 不需要建表，配置字段
+- json格式的文档
+
+使用docker安装ElasticSearch，本课程只需要简单的使用。
+
+- 使用REST接口。
+- 使用POST/PUT创建/修改数据。**POST**创建数据可省略id。
+- GET获取数据。
+- 全文搜索：`GET <index>/<type>/_search?q=...`
+
+<2018.10.28>
+
+重构与运行
+
+
+
