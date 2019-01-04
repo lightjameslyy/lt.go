@@ -1,2 +1,2 @@
 # lt-go
-my golang learning path
+learning golang
