@@ -72,10 +72,7 @@ func removeDuplicates(nums []int) int {
     }
     end := 2
     for i := 2; i < len(nums); i++ {
-        if nums[end-1] != nums[end-2] {
-            nums[end] = nums[i]
-            end++
-        } else if nums[i] != nums[end-1] {
+        if nums[end-1] != nums[end-2] || nums[i] != nums[end-1] {
             nums[end] = nums[i]
             end++
         }
