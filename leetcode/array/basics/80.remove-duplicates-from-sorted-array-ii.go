@@ -44,22 +44,22 @@
  * i: traversal pointer
  * count: current duplicates times
  * 
- * step 0: end = 2, i = 2, nums[end-1] == nums[end-2] && nums[i] == nums[end-1]
+ * step 0: end = 2, i = 2, nums[i] == nums[end-2]
  *          e                     e
  *     [1,1,1,2,2,3]   ==>   [1,1,1,2,2,3] 
  *          i                     i
  * 
- * step 1: end = 2, i = 3, nums[end-1] == nums[end-2] && nums[i] != nums[end-1]
+ * step 1: end = 2, i = 3, nums[i] != nums[end-2]
  *          e                       e
  *     [1,1,1,2,2,3]   ==>   [1,1,2,2,2,3] 
  *            i                     i
  *
- * step 2: end = 3, i = 4, nums[end-1] != nums[end-2]
+ * step 2: end = 3, i = 4, nums[i] != nums[end-2]
  *            e                       e
  *     [1,1,2,2,2,3]   ==>   [1,1,2,2,2,3] 
  *              i                     i
  *
- * step 3: end = 4, i = 5, nums[end-1] == nums[end-2] && nums[i] != nums[end-1]
+ * step 3: end = 4, i = 5, nums[i] != nums[end-2]
  *              e                       e
  *     [1,1,2,2,2,3]   ==>   [1,1,2,2,3,3] 
  *                i                     i
@@ -72,7 +72,7 @@ func removeDuplicates(nums []int) int {
     }
     end := 2
     for i := 2; i < len(nums); i++ {
-        if nums[end-1] != nums[end-2] || nums[i] != nums[end-1] {
+        if nums[i] != nums[end-2] {
             nums[end] = nums[i]
             end++
         }
