@@ -44,16 +44,21 @@
  * 
  */
 func rotate(nums []int, k int)  {
-    if len(nums) < 2 {
+    k = k % len(nums)
+    if len(nums) < 2 || k == 0 {
         return
     }
-    tmp1, tmp2, cur, next, n := nums[0], nums[1], 0, 0, len(nums)
-    k = k % n
+    pre, n := nums[0], len(nums)
+    j := 0
     for i := 0; i < n; i++ {
-        cur = i
-        next = (i+k) % n
-        tmp2 = nums[next]
-        nums[next] = tmp1
-        tmp1 = tmp2
+        next := (j+k) % n
+        tmp := nums[next]
+        nums[next] = pre
+        pre = tmp
+        j = next
+        if j == 0 {
+            j = j+1
+            pre = nums[j]
+        }
     }
 }
