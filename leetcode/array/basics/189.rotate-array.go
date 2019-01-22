@@ -46,7 +46,6 @@
 
 /*
  * 1. time: O(n), space: O(n)
- */
 func rotate(nums []int, k int)  {
     tmp := make([]int, len(nums))
     for i := 0; i < len(nums); i++ {
@@ -55,4 +54,29 @@ func rotate(nums []int, k int)  {
     for i := 0; i < len(nums); i++ {
         nums[i] = tmp[i]
     }
+}
+ */
+
+/*
+ * 2. time: O(n), space: O(1)
+ * hint: 3 times reverses
+ */
+func reverse(nums []int, l, r int)  {
+    for l < r {
+        tmp := nums[l]
+        nums[l] = nums[r]
+        nums[r] = tmp
+        l++
+        r--
+    }
+}
+
+func rotate(nums []int, k int)  {
+    k = k % n
+    if len(nums) < 2 || k == 0 {
+        return
+    }
+    reverse(nums, 0, len(nums) - k - 1)
+    reverse(nums, len(nums) - k, len(nums) - 1)
+    reverse(nums, 0, len(nums) - 1)
 }
