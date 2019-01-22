@@ -60,7 +60,6 @@ func rotate(nums []int, k int)  {
 /*
  * 2. time: O(n), space: O(1)
  * hint: 3 times reverses
- */
 func reverse(nums []int, l, r int) {
 	for l < r {
 		tmp := nums[l]
@@ -79,4 +78,32 @@ func rotate(nums []int, k int) {
 	reverse(nums, 0, len(nums)-k-1)
 	reverse(nums, len(nums)-k, len(nums)-1)
 	reverse(nums, 0, len(nums)-1)
+}
+ */
+
+/*
+ * 3. Cyclic Replacements
+ * time: O(n), space O(1)
+ */
+func rotate(nums []int, k int) {
+	k = k % len(nums)
+	if len(nums) < 2 || k == 0 {
+		return
+	}
+    count := 0
+    for start := 0; count < len(nums); start++ {
+        cur := start
+        prev := nums[start]
+        for ; ; {
+            next := (cur + k) % len(nums)
+            tmp := nums[next]
+            nums[next] = prev
+            prev = tmp
+            cur = next
+            count++
+            if cur == start {
+                break
+            }
+        }
+    }
 }
