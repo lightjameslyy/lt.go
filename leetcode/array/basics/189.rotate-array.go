@@ -43,22 +43,16 @@
  * Could you do it in-place with O(1) extra space?
  * 
  */
+
+/*
+ * 1. time: O(n), space: O(n)
+ */
 func rotate(nums []int, k int)  {
-    k = k % len(nums)
-    if len(nums) < 2 || k == 0 {
-        return
+    tmp := make([]int, len(nums))
+    for i := 0; i < len(nums); i++ {
+        tmp[(i+k) % len(nums)] = nums[i]
     }
-    pre, n := nums[0], len(nums)
-    j := 0
-    for i := 0; i < n; i++ {
-        next := (j+k) % n
-        tmp := nums[next]
-        nums[next] = pre
-        pre = tmp
-        j = next
-        if j == 0 {
-            j = j+1
-            pre = nums[j]
-        }
+    for i := 0; i < len(nums); i++ {
+        nums[i] = tmp[i]
     }
 }
