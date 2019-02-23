@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=274 lang=golang
  *
@@ -34,7 +36,6 @@
  * as the h-index.
  *
  */
-// package main
 
 func hIndex(citations []int) int {
 	sort.Sort(sort.Reverse(sort.IntSlice(citations)))

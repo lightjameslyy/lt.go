@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=189 lang=golang
  *
@@ -79,7 +81,7 @@ func rotate(nums []int, k int) {
 	reverse(nums, len(nums)-k, len(nums)-1)
 	reverse(nums, 0, len(nums)-1)
 }
- */
+*/
 
 /*
  * 3. Cyclic Replacements
@@ -90,20 +92,20 @@ func rotate(nums []int, k int) {
 	if len(nums) < 2 || k == 0 {
 		return
 	}
-    count := 0
-    for start := 0; count < len(nums); start++ {
-        cur := start
-        prev := nums[start]
-        for ; ; {
-            next := (cur + k) % len(nums)
-            tmp := nums[next]
-            nums[next] = prev
-            prev = tmp
-            cur = next
-            count++
-            if cur == start {
-                break
-            }
-        }
-    }
+	count := 0
+	for start := 0; count < len(nums); start++ {
+		cur := start
+		prev := nums[start]
+		for {
+			next := (cur + k) % len(nums)
+			tmp := nums[next]
+			nums[next] = prev
+			prev = tmp
+			cur = next
+			count++
+			if cur == start {
+				break
+			}
+		}
+	}
 }

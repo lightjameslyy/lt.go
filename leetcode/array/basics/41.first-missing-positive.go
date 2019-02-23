@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=41 lang=golang
  *
@@ -46,9 +48,9 @@
  * implicit information: the array is expected to be
  *  0  1  2       len-1
  * [1, 2, 3, ..., len]
- * 
+ *
  * example: [3,4,-1,1]
- *          
+ *
  *          3  4 -1  1
  *          0  1  2  3
  *
@@ -56,9 +58,9 @@
  *
  *          -1  4  3  1
  *          0   1  2  3
- *      
+ *
  * step 1: i = 0, nums[0] = -1 < 0
- * 
+ *
  *          -1  4  3  1
  *          0   1  2  3
  *
@@ -66,19 +68,19 @@
  *
  *          -1  1  3  4
  *          0   1  2  3
- * 
+ *
  * step 3: i = 1, nums[1] = 1, nums[1-1] == 0 != 1, swap nums[1] and nums[0]
  *
  *          1  -1  3  4
  *          0   1  2  3
  *
  * step 4: i = 2, nums[2] = 3, nums[3-1] == 3
- * 
+ *
  *          1  -1  3  4
  *          0   1  2  3
  *
  * step 5: i = 3, nums[3] = 4, nums[4-1] == 4
- * 
+ *
  *          1  -1  3  4
  *          0   1  2  3
  *

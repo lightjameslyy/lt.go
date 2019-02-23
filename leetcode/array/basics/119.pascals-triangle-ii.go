@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=119 lang=golang
  *
@@ -32,7 +34,6 @@
  * Could you optimize your algorithm to use only O(k) extra space?
  *
  */
-// package main
 
 func getRow(rowIndex int) []int {
 	res := make([]int, rowIndex+1)

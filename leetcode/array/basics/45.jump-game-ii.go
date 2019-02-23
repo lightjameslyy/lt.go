@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=45 lang=golang
  *
@@ -32,8 +34,6 @@
  * You can assume that you can always reach the last index.
  *
  */
-
-package main
 
 func max(a, b int) int {
 	if a > b {

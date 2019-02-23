@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=123 lang=golang
  *
@@ -52,8 +54,6 @@
  *
  */
 
-package main
-
 func MaxInt(a, b int) int {
 	if a < b {
 		return b
@@ -74,7 +74,7 @@ func maxProfit(prices []int) int {
 		sell1 = MaxInt(sell1, buy1+price)
 		buy1 = MaxInt(buy1, -price)
 	}
-    // sell2 > buy2+price > (sell1-price)+price > sell1
+	// sell2 > buy2+price > (sell1-price)+price > sell1
 	if sell2 < 0 {
 		return 0
 	}

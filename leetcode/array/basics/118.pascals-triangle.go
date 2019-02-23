@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=118 lang=golang
  *
@@ -33,7 +35,6 @@
  *
  *
  */
-// package main
 
 func generate(numRows int) [][]int {
 	res := make([][]int, numRows)

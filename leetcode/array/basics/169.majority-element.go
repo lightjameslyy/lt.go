@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=169 lang=golang
  *
@@ -31,7 +33,6 @@
  *
  *
  */
-// package main
 
 /*
  * using hash map

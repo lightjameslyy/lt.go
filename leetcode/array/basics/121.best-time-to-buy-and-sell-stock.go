@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=121 lang=golang
  *
@@ -39,8 +41,6 @@
  *
  *
  */
-
-package main
 
 func MinInt(a, b int) int {
 	if a < b {

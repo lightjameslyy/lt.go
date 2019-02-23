@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=220 lang=golang
  *
@@ -44,8 +46,6 @@
  *
  *
  */
-
-//package main
 
 // method 1: sort (with indexes)
 // time: O(nlogn), space: O(n)

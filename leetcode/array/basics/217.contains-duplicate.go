@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=217 lang=golang
  *
@@ -35,7 +37,6 @@
  * Output: true
  *
  */
-//package main
 
 //import "fmt"
 

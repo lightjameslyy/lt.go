@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=134 lang=golang
  *
@@ -79,8 +81,6 @@
  *		1. find all start positions following successive gas[i] > cost[i]
  *		2. try from each position found in step 1
  */
-
-// package main
 
 func try(gas []int, cost []int, start int) bool {
 	sum := 0

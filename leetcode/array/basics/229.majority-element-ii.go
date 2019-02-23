@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=229 lang=golang
  *
@@ -29,7 +31,6 @@
  * Output: [1,2]
  *
  */
-//package main
 
 func majorityElement(nums []int) []int {
 	var res []int

@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=55 lang=golang
  *
@@ -39,8 +41,6 @@
  *
  *
  */
-
-//package main
 
 func max(a, b int) int {
 	if a > b {

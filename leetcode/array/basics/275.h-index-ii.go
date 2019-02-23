@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=275 lang=golang
  *
@@ -52,8 +54,6 @@
  *
  */
 
-//package main
-
 func hIndex(citations []int) int {
 	if len(citations) == 0 {
 		return 0
@@ -65,7 +65,7 @@ func hIndex(citations []int) int {
 		mid := l + (r-l)/2
 		if citations[mid] >= len(citations)-mid {
 			// 如果满足H-Index，更新res
-			res = len(citations)-mid
+			res = len(citations) - mid
 			r = mid - 1
 		} else {
 			l = mid + 1

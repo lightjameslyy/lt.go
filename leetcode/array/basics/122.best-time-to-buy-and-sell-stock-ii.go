@@ -1,3 +1,5 @@
+package main
+
 /*
  * @lc app=leetcode id=122 lang=golang
  *
@@ -53,8 +55,6 @@
  * Explanation: In this case, no transaction is done, i.e. max profit = 0.
  *
  */
-
-package main
 
 // 波谷买入，波峰卖出
 func maxProfit1(prices []int) int {

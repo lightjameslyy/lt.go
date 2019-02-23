@@ -1,3 +1,5 @@
+package main
+
 // This is a follow up of Shortest Word Distance. The only difference is now word1 could be the same asword2.
 //
 // Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.
@@ -12,8 +14,6 @@
 //
 // Note:
 // You may assume word1 and word2 are both in the list.
-
-package main
 
 import (
 	"fmt"
