@@ -54,7 +54,7 @@ package main
  *
  */
 
-func MaxInt(a, b int) int {
+func maxInt(a, b int) int {
 	if a < b {
 		return b
 	}
@@ -69,10 +69,10 @@ func maxProfit(prices []int) int {
 	sell2 := 0       // sell2: the profit after second sell
 	// update order: sell2, buy2, sell1, buy1
 	for _, price := range prices {
-		sell2 = MaxInt(sell2, buy2+price)
-		buy2 = MaxInt(buy2, sell1-price)
-		sell1 = MaxInt(sell1, buy1+price)
-		buy1 = MaxInt(buy1, -price)
+		sell2 = maxInt(sell2, buy2+price)
+		buy2 = maxInt(buy2, sell1-price)
+		sell1 = maxInt(sell1, buy1+price)
+		buy1 = maxInt(buy1, -price)
 	}
 	// sell2 > buy2+price > (sell1-price)+price > sell1
 	if sell2 < 0 {

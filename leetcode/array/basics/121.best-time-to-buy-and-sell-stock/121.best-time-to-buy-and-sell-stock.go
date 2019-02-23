@@ -42,14 +42,14 @@ package main
  *
  */
 
-func MinInt(a, b int) int {
+func minInt(a, b int) int {
 	if a < b {
 		return a
 	}
 	return b
 }
 
-func MaxInt(a, b int) int {
+func maxInt(a, b int) int {
 	if a < b {
 		return b
 	}
@@ -64,8 +64,8 @@ func maxProfit(prices []int) int {
 	maxProfit := 0
 	curMin := prices[0]
 	for i := 1; i < n; i++ {
-		maxProfit = MaxInt(maxProfit, prices[i]-curMin)
-		curMin = MinInt(curMin, prices[i])
+		maxProfit = maxInt(maxProfit, prices[i]-curMin)
+		curMin = minInt(curMin, prices[i])
 	}
 	return maxProfit
 }
