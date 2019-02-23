@@ -54,43 +54,29 @@
 
 package main
 
-// 找到最大的两个上升段
+func MaxInt(a, b int) int {
+	if a < b {
+		return b
+	}
+	return a
+}
+
+// DP: update buy1, sell1, buy2, sell2
 func maxProfit(prices []int) int {
-	maxFirst, maxSecond := 0, 0
-	n := len(prices)
-	if n < 2 {
+	buy1 := -1 << 31 // buy1: the profit after first buy
+	sell1 := 0       // sell1: the profit after first sell
+	buy2 := -1 << 31 // buy2: the profit after second buy, take sell1 into account
+	sell2 := 0       // sell2: the profit after second sell
+	// update order: sell2, buy2, sell1, buy1
+	for _, price := range prices {
+		sell2 = MaxInt(sell2, buy2+price)
+		buy2 = MaxInt(buy2, sell1-price)
+		sell1 = MaxInt(sell1, buy1+price)
+		buy1 = MaxInt(buy1, -price)
+	}
+    // sell2 > buy2+price > (sell1-price)+price > sell1
+	if sell2 < 0 {
 		return 0
 	}
-	// lowIndex和highIndex分别为波谷和波峰的index
-	lowIndex, highIndex := -1, -1
-	for i := 0; i < n; i++ {
-		if i == 0 {
-			if prices[0] < prices[1] {
-				lowIndex = 0
-			}
-		} else if i == n-1 {
-			if prices[n-1] > prices[n-2] {
-				highIndex = n - 1
-			}
-		} else {
-			if prices[i] >= prices[i-1] && prices[i] >= prices[i+1] {
-				highIndex = i
-			}
-			if prices[i] <= prices[i-1] && prices[i] <= prices[i+1] {
-				lowIndex = i
-			}
-		}
-		if lowIndex != -1 && highIndex != -1 && lowIndex < highIndex {
-			profit := prices[highIndex] - prices[lowIndex]
-			if profit > maxFirst {
-				maxSecond = maxFirst
-				maxFirst = profit
-			} else if profit > maxSecond {
-				maxSecond = profit
-			}
-			lowIndex = -1
-			highIndex = -1
-		}
-	}
-	return maxFirst + maxSecond
+	return sell2
 }
