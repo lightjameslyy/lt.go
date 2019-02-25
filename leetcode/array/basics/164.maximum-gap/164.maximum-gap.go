@@ -80,20 +80,23 @@ func maximumGap(nums []int) int {
 	if size < 2 {
 		return 0
 	}
+	// 求每个桶的范围
 	minVal, maxVal := getMinMax(nums)
-	bktWidth := (maxVal-minVal)/size + 1
+	step := (maxVal-minVal)/size + 1
+	// 记录每个桶的最大值和最小值
 	bktMin, bktMax := make([]int, size), make([]int, size)
 	fill(bktMin, 1<<31-1)
 	fill(bktMax, -1<<31)
 	for _, v := range nums {
-		i := (v - minVal + 1) / bktWidth
+		i := (v - minVal) / step
 		bktMin[i] = min(bktMin[i], v)
 		bktMax[i] = max(bktMax[i], v)
 	}
-	res := -1 << 31
+	// 最终的结果肯定是bktMin[j]-bktMax[i], i < j
+	res := 0
 	preMax := bktMax[0]
 	for i := 1; i < size; i++ {
-		if bktMax[i] != 1<<31-1 {
+		if bktMin[i] != 1<<31-1 {
 			if preMax != -1<<31 {
 				res = max(res, bktMin[i]-preMax)
 			}
