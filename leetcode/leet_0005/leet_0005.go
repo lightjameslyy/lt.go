@@ -104,7 +104,7 @@ func LongestPalindrome(s string) string {
 	if len(s) == 0 {
 		return s
 	}
-    res = ""
+	res = ""
 	for i := 0; i < len(s); i++ {
 		helper(s, i, i)
 		helper(s, i, i+1)

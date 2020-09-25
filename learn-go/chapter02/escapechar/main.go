@@ -1,6 +1,6 @@
 package main
 
-import "fmt"	//格式化，io
+import "fmt" //格式化，io
 
 func main() {
 	// test escape char

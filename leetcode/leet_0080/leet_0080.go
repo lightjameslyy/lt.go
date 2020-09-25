@@ -29,5 +29,5 @@ func RemoveDuplicates(nums []int) int {
 		}
 		cur++
 	}
-	return end+1
+	return end + 1
 }

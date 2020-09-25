@@ -11,7 +11,7 @@ var (
 	globalCnt = int64(0)
 )
 
-func main()  {
+func main() {
 	singleFlight := singleflight.Group{}
 
 	wg := sync.WaitGroup{}
