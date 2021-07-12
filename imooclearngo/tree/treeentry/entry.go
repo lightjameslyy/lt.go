@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"lt.go/imooclearngo/tree"
+	"github.com/lightjameslyy/lt.go/imooclearngo/tree"
 )
 
 // 通过组合的方式扩展包

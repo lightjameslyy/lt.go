@@ -1,10 +1,10 @@
 package main
 
 import (
-	"lt.go/imooclearngo/crawler/engine"
-	"lt.go/imooclearngo/crawler/persist"
-	"lt.go/imooclearngo/crawler/scheduler"
-	"lt.go/imooclearngo/crawler/zhenai/parser"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/engine"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/persist"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/scheduler"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/zhenai/parser"
 )
 
 func main() {

@@ -6,7 +6,7 @@ import (
 	"io"
 	"strings"
 
-	"lt.go/imooclearngo/functional/fib"
+	"github.com/lightjameslyy/lt.go/imooclearngo/functional/fib"
 )
 
 type intGen func() int

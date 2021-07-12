@@ -1,6 +1,6 @@
 package main
 
-import "lt.go/demo/demochain/core"
+import "github.com/lightjameslyy/lt.go/demo/demochain/core"
 
 func main() {
 	bc := core.NewBlockChain()

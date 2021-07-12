@@ -1,7 +1,7 @@
 package scheduler
 
 import (
-	"lt.go/imooclearngo/crawler/engine"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/engine"
 )
 
 type SimpleScheduler struct {

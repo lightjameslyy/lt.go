@@ -3,7 +3,7 @@ package engine
 import (
 	"log"
 
-	"lt.go/imooclearngo/crawler/fetcher"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/fetcher"
 )
 
 type SimpleEngine struct{}

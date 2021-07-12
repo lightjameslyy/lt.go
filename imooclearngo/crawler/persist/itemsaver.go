@@ -5,7 +5,7 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/olivere/elastic.v5"
 	"log"
-	"lt.go/imooclearngo/crawler/engine"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/engine"
 )
 
 func ItemSaver() chan engine.Item {

@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	"lt.go/demo/demochain/core"
+	"github.com/lightjameslyy/lt.go/demo/demochain/core"
 )
 
 var blockchain *core.BlockChain

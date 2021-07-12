@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"gopkg.in/olivere/elastic.v5"
-	"lt.go/imooclearngo/crawler/engine"
-	"lt.go/imooclearngo/crawler/model"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/engine"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/model"
 	"testing"
 )
 

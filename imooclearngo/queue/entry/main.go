@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"lt.go/imooclearngo/queue"
+	"github.com/lightjameslyy/lt.go/imooclearngo/queue"
 )
 
 func main() {

@@ -4,8 +4,8 @@ import (
 	"regexp"
 	"strconv"
 
-	"lt.go/imooclearngo/crawler/engine"
-	"lt.go/imooclearngo/crawler/model"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/engine"
+	"github.com/lightjameslyy/lt.go/imooclearngo/crawler/model"
 )
 
 var ageRe = regexp.MustCompile(`<td><span class="label">年龄：</span>([\d]+)岁</td>`)

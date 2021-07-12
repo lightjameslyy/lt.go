@@ -6,7 +6,7 @@ import (
 	_ "net/http/pprof"
 	"os"
 
-	"lt.go/imooclearngo/errhandling/filelistingserver/filelisting"
+	"github.com/lightjameslyy/lt.go/imooclearngo/errhandling/filelistingserver/filelisting"
 )
 
 type appHandler func(w http.ResponseWriter, r *http.Request) error

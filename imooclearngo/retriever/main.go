@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"lt.go/imooclearngo/retriever/mock"
-	"lt.go/imooclearngo/retriever/real"
+	"github.com/lightjameslyy/lt.go/imooclearngo/retriever/mock"
+	"github.com/lightjameslyy/lt.go/imooclearngo/retriever/real"
 )
 
 const url = "http://www.imooc.com"

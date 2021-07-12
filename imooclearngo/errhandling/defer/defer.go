@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"lt.go/imooclearngo/functional/fib"
+	"github.com/lightjameslyy/lt.go/imooclearngo/functional/fib"
 )
 
 func tryDefer() {
